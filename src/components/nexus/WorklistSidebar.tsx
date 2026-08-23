@@ -51,20 +51,18 @@ export function WorklistSidebar({ cases, selectedId, actions, onSelect }: Workli
                   : "border-transparent hover:border-border hover:bg-muted/60",
               )}
             >
-              <div className="flex items-start justify-between gap-2">
-                <div className="min-w-0">
-                  <p className="truncate text-sm font-semibold text-sidebar-foreground">
-                    {record.name}
-                    <span className="ml-1.5 font-normal text-muted-foreground">
-                      {record.age} y/o
-                    </span>
-                  </p>
-                  <p className="mt-0.5 font-mono text-[11px] text-muted-foreground">
-                    {record.case_id}
-                  </p>
-                </div>
-                <RiskBadge level={level} label={record.risk_tier} className="shrink-0" />
+              <div className="flex items-center justify-between gap-2">
+                <p className="truncate text-sm font-semibold text-sidebar-foreground">
+                  {record.name}
+                </p>
+                <span className="shrink-0 text-xs font-normal text-muted-foreground">
+                  {record.age} y/o
+                </span>
               </div>
+              <p className="mt-0.5 font-mono text-[11px] break-all text-muted-foreground">
+                {record.case_id}
+              </p>
+              <RiskBadge level={level} label={record.risk_tier} className="mt-2" />
 
               <div className="mt-2.5 flex items-center gap-2">
                 <div className="h-1 flex-1 overflow-hidden rounded-full bg-muted">
