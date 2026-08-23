@@ -81,7 +81,7 @@ export function AgentTrace({ trace }: { trace: TraceNode[] }) {
       <ol className="mt-5 flex items-start gap-0">
         {trace.map((step, i) => {
           const status = statuses[i] ?? "pending";
-          const Icon = STEP_ICONS[i % STEP_ICONS.length];
+          const Icon = STEP_ICONS[i % STEP_ICONS.length]!;
           const chip = STATUS_CHIP[status];
           return (
             <li key={step.node} className="flex min-w-0 flex-1 items-start">
